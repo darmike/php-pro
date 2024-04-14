@@ -1,4 +1,7 @@
 <?php
+
+use carMaster\Car;
+
 class Owner {
 public string $name;
 public array $cars;

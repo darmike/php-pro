@@ -1,5 +1,9 @@
 <?php
 
+use carMaster\Car;
+use carMaster\Owner;
+use carMaster\Supplier;
+
 require_once 'Car.php';
 require_once 'Owner.php';
 require_once 'Supplier.php';

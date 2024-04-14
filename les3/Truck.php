@@ -1,5 +1,7 @@
 <?php
 
+use carMaster\Car;
+
 class Truck extends Car {
     private float $maxLoadCapacity;
 
