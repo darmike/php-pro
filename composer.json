@@ -1,0 +1,21 @@
+{
+  "name": "darmike/php-pro",
+  "description": "CarMasterProject",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "darmike",
+      "email": "darmogray007@gmail.com"
+    }
+  ],
+  "require": {
+    "symfony/console": "6.4",
+    "monolog/monolog": "^3.6",
+    "fakerphp/faker": "^1.23",
+    "symfony/filesystem": "^7.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.1"
+  }
+}

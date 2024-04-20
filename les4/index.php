@@ -1,28 +1,46 @@
 <?php
 
 
+declare(strict_types=1);
+
 
 require_once 'Autoloader.php';
 
 use carMaster\Car;
 use carMaster\Owner;
 use carMaster\Supplier;
-use carMaster\Truck;
 use carMaster\HybridCar;
 use carMaster\ElectricCar;
 
-// Створюємо автомобіль
-$car = new Car('Peugeout', '206', 2011);
 
-// Створюємо власника автомобіля
-$owner = new Owner('Anriy Schevchenko');
-$owner->addCar($car);
 
-// Створюємо постачальника
-$supplier = new Supplier('AutoParts Zachid.');
+$car = new Car('Toyota', 'Camry', 2023, 'AA1342RE');
 
-// Приклад інформації про автомобіль та його власника
-echo "Owner: " . $owner->getName() . "\n";
-echo "Car: " . $car->getBrand() . " " . $car->getModel() . ", " . $car->getYear() . "\n";
+$owner = new Owner('John Evans');
+
+
+try {
+	$car = new Car('Toyota', 'Camry', 2023, 'AA342RE');
+	
+	$owner->addCar($car);
+	
+	
+	echo "Owner: " . $owner->getName() . "\n";
+	
+	echo "Car: " . $car->getBrand() . " " . $car->getModel() . ", " . $car->getYear() . ", " . $car->getId() . "\n";
+	
+	} catch (InvalidArgumentException $e) {
+	
+	echo "Error: " . $e->getMessage() . "\n";
+	
+	}
+
+
+
+
+
+
+
+
 
 
