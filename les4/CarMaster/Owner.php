@@ -2,8 +2,7 @@
 declare(strict_types=1);
 namespace CarMaster;
 
-use Exception;
-use CarMaster\Exсeptions\Car_ID_Exception;
+
 
 
 class Owner
@@ -28,12 +27,7 @@ class Owner
     {
         $this->cars[] = $car;
 		
-		try {
-			$car->setId($car->getId());
-			$this->cars[] = $car;
-		} catch (InvalidArgumentException $e) {
-			echo "Error: " . $e->getMessage() . "\n";
-		}
+
 		
 		
     }
