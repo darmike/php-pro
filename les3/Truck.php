@@ -1,8 +1,8 @@
 <?php
-
-use carMaster\Car;
-
-class Truck extends Car {
+    
+    use CarMaster\Car;
+    
+    class Truck extends Car {
     private float $maxLoadCapacity;
 
     public function __construct(string $brand, string $model, int $year, float $maxLoadCapacity) {

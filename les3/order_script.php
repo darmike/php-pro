@@ -1,10 +1,10 @@
 <?php
-
-use carMaster\Car;
-use carMaster\Owner;
-use carMaster\Supplier;
-
-require_once 'Car.php';
+    
+    use CarMaster\Car;
+    use CarMaster\Client;
+    use carMaster\Supplier;
+    
+    require_once 'Car.php';
 require_once 'Owner.php';
 require_once 'Supplier.php';
 
@@ -12,7 +12,7 @@ require_once 'Supplier.php';
 $car = new Car('Peugeout', '206', 2011);
 
 // Створюємо власника автомобіля
-$owner = new Owner('Anriy Schevchenko');
+$owner = new Client('Anriy Schevchenko');
 $owner->addCar($car);
 
 // Створюємо постачальника
@@ -21,6 +21,6 @@ $supplier = new Supplier('AutoParts Zachid.');
 
 
 // Приклад інформації про автомобіль та його власника
-echo "Owner: " . $owner->getName() . "\n";
+echo "Client: " . $owner->getName() . "\n";
 echo "Car: " . $car->getBrand() . " " . $car->getModel() . ", " . $car->getYear() . "\n";
 

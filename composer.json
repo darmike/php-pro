@@ -1,21 +1,18 @@
 {
-  "name": "darmike/php-pro",
-  "description": "CarMasterProject",
-  "minimum-stability": "stable",
-  "license": "proprietary",
-  "authors": [
-    {
-      "name": "darmike",
-      "email": "darmogray007@gmail.com"
-    }
-  ],
-  "require": {
-    "symfony/console": "6.4",
-    "monolog/monolog": "^3.6",
-    "fakerphp/faker": "^1.23",
-    "symfony/filesystem": "^7.0"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^11.1"
-  }
+    "name": "38063/php-pro",
+    "description": "CarMaster Project",
+    "require": {
+        "monolog/monolog": "^3.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "38063\\PhpPro\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "darmike",
+            "email": "darmogray777@gmail.com"
+        }
+    ]
 }

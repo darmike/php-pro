@@ -1,14 +1,13 @@
 <?php
     
     declare(strict_types=1);
-    
     require_once 'autoloader.php';
     
     use CarMaster\Car;
     use CarMaster\Client;
-    use CarMaster\Service;
-    use CarMaster\FinalOrder;
     use CarMaster\Exceptions\CarIdException;
+    use CarMaster\FinalOrder;
+    use CarMaster\Service;
     
     try {
         // Створення автомобілів

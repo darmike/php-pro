@@ -1,8 +1,8 @@
 <?php
-
-use carMaster\Car;
-
-class Owner {
+    
+    use CarMaster\Car;
+    
+    class Owner {
 public string $name;
 public array $cars;
 

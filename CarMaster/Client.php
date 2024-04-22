@@ -12,8 +12,13 @@
         private string $clientId;
         private Car $car;
         
-        public function __construct(string $firstName, string $lastName, string $phoneNumber, string $clientId, Car $car)
-        {
+        public function __construct(
+            string $firstName,
+            string $lastName,
+            string $phoneNumber,
+            string $clientId,
+            Car $car
+        ) {
             $this->firstName = $firstName;
             $this->lastName = $lastName;
             $this->phoneNumber = $phoneNumber;
@@ -49,7 +54,10 @@
         public function orderParts(array $parts): void
         {
             // Логіка замовлення запчастин для автомобіля клієнта
-            echo "Ordering parts for {$this->car->getBrand()} {$this->car->getModel()} (Client: {$this->firstName} {$this->lastName}): " . implode(', ', $parts) . "\n";
+            echo "Ordering parts for {$this->car->getBrand()} {$this->car->getModel()} (Client: {$this->firstName} {$this->lastName}): ".implode(
+                    ', ',
+                    $parts
+                )."\n";
             // Тут можна викликати зовнішні сервіси, щоб замовити запчастини
         }
     }
