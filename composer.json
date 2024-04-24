@@ -6,7 +6,7 @@
     },
     "autoload": {
         "psr-4": {
-            "38063\\PhpPro\\": "src/"
+            "38063\\PhpPro\\": "php-pro/CarMaster"
         }
     },
     "authors": [
