@@ -1,0 +1,25 @@
+services:
+  php:
+    build:
+      args:
+      XDEBUG_ENABLED: ${XDEBUG_ENABLED-false}
+    depends_on:
+       -db
+    volumes:
+      - ./:/home/php-pro:delegate
+    environment:
+      -PHP_IDE_CONFIG
+      -XDEBUG_CONFIG
+      -DB_HOST=db
+      -DB_USER
+      -DB_NAME
+      -DB_PASSWORD
+  db:
+    image: mysql:8
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_USER: ${DB_USER}
+
+volumes:
+  my_db:
