@@ -50,3 +50,5 @@
     } catch (CarIdException $e) {
         echo "Помилка: {$e->getMessage()}\n";
     }
+
+    //модифікація файла
