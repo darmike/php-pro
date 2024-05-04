@@ -17,7 +17,7 @@
         $car1 = new Car('Toyota', 'Corolla', 2022, 'ABC123AA');
         $car2 = new Car('BMW', 'X5', 2021, 'XYZ789AA');
         $car3 = new Car('Honda', 'Civic', 2023, 'DEF456A4');
-        
+        $car4 = new Car('Honda', 'Acord', 2023, 'DEF456A4');
         // Створення клієнтів
         $client1 = new Client('Andrii', 'Shevchenko', '380977788995', 'C123', $car1);
         $client2 = new Client('Ivan', 'Kozlov', '380639969092', 'C456', $car2);
