@@ -1,9 +1,9 @@
 <?php
     
     declare(strict_types=1);
-    require_once 'autoloader.php';
+    
 
-//    require dirname(__DIR__).'/php-pro/vendor/autoload.php';
+    require dirname(__DIR__).'/php-pro/vendor/autoload.php';
    
     
     use CarMaster\Car;
