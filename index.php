@@ -22,7 +22,7 @@
         $client1 = new Client('Andrii', 'Shevchenko', '380977788995', 'C123', $car1);
         $client2 = new Client('Ivan', 'Kozlov', '380639969092', 'C456', $car2);
         $client3 = new Client('Yuriy', 'Adamovski', '380968745965', 'C789', $car3);
-        
+        $client4 = new Client('ury', 'damovki', '380968745965', 'C789', $car3);
         // Створення послуг
         $service1 = new Service('C123', 'Заміна мастила', 'Періодичний сервіс автомобіля');
         $service2 = new Service('C456', 'Заміна резини', 'Періодичний сервіс автомобіля');
