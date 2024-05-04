@@ -1,12 +1,9 @@
 {
     "name": "38063/php-pro",
     "description": "CarMaster Project",
-    "require": {
-        "monolog/monolog": "^3.6"
-    },
     "autoload": {
         "psr-4": {
-            "38063\\PhpPro\\": "php-pro/CarMaster"
+            "38063\\PhpPro\\": "src/"
         }
     },
     "authors": [
@@ -14,5 +11,6 @@
             "name": "darmike",
             "email": "darmogray777@gmail.com"
         }
-    ]
+    ],
+    "require": {}
 }
