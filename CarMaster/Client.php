@@ -44,6 +44,17 @@
             return $this->cars;
         }
         
+        
+        //пошук серед авто власника (business logic)
+        public function findCar(string $modelName): ?Car
+        {
+            foreach ($this->cars as $car) {
+                if ($car->getModel() === $modelName) {
+                    return $car;
+                }
+            }
+            return null;
+        }
         public function orderParts(array $parts): void
         {
             foreach ($this->cars as $car) {
