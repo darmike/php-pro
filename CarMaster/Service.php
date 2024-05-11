@@ -1,34 +1,33 @@
 <?php
     
-    declare(strict_types=1);
-    
     namespace CarMaster;
     
     class Service
     {
         private string $clientId;
         private string $description;
-        private string $category;
+        private array $categories; // Масив категорій
         
-        public function __construct(string $clientId, string $description, string $category)
+        public function __construct(string $clientId, string $description, array $categories)
         {
             $this->clientId = $clientId;
             $this->description = $description;
-            $this->category = $category;
+            $this->categories = $categories;
         }
         
-        public function getClientId(): string
+        public function getCategories(): array
         {
-            return $this->clientId;
+            return $this->categories;
         }
         
         public function getDescription(): string
         {
             return $this->description;
         }
-        
-        public function getCategory(): string
+        public function getClientId(): string
         {
-            return $this->category;
+            return $this->clientId;
         }
     }
+
+

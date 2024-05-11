@@ -11,7 +11,7 @@ docker ps - показати контейнер та інфо про нього
 docker exec -it lesson4 bash  - команда щоб ввійти всередину контейнера
 docker kill lesson4 - зупинка контейнера по імені
 docker ps -a    --- команда щоб переглянути всі не працюючі контейнери, але які були створені раніше
-
+docker compose run --rm php -f index.php -запуск файла з контейнер+композер
 
 # Installs Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer

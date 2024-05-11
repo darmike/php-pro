@@ -1,16 +1,22 @@
 {
-    "name": "38063/php-pro",
-    "description": "CarMaster Project",
-    "autoload": {
-        "psr-4": {
-            "38063\\PhpPro\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "darmike",
-            "email": "darmogray777@gmail.com"
-        }
-    ],
-    "require": {}
+  "name": "38063/php-pro",
+  "description": "car-master",
+  "require": {
+    "monolog/monolog": "^3.6",
+    "symfony/console": "^7.0",
+    "doctrine/orm": "^3.1",
+    "doctrine/dbal": "^4.0"
+
+  },
+  "autoload": {
+    "psr-4": {
+      "CarMaster\\": "./CarMaster"
+    }
+  },
+  "authors": [
+    {
+      "name": "darmike",
+      "email": "darmogray777@gmail.com"
+    }
+  ]
 }

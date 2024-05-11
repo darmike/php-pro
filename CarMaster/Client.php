@@ -1,7 +1,5 @@
 <?php
     
-    declare(strict_types=1);
-    
     namespace CarMaster;
     
     class Client
@@ -10,20 +8,15 @@
         private string $lastName;
         private string $phoneNumber;
         private string $clientId;
-        private Car $car;
+        private array $cars = [];
         
-        public function __construct(
-            string $firstName,
-            string $lastName,
-            string $phoneNumber,
-            string $clientId,
-            Car $car
-        ) {
+        public function __construct(string $firstName, string $lastName, string $phoneNumber, string $clientId, Car $car)
+        {
             $this->firstName = $firstName;
             $this->lastName = $lastName;
             $this->phoneNumber = $phoneNumber;
             $this->clientId = $clientId;
-            $this->car = $car;
+            $this->cars[] = $car;
         }
         
         public function getFirstName(): string
@@ -46,18 +39,22 @@
             return $this->clientId;
         }
         
-        public function getCar(): Car
+        public function getCars(): array
         {
-            return $this->car;
+            return $this->cars;
         }
         
         public function orderParts(array $parts): void
         {
-            // Логіка замовлення запчастин для автомобіля клієнта
-            echo "Ordering parts for {$this->car->getBrand()} {$this->car->getModel()} (Client: {$this->firstName} {$this->lastName}): ".implode(
-                    ', ',
-                    $parts
-                )."\n";
-            // Тут можна викликати зовнішні сервіси, щоб замовити запчастини
+            foreach ($this->cars as $car) {
+                foreach ($car->getParts() as $part) {
+                    if ($part->isAvailable()) {
+                        echo "Ordering {$part->getType()} for {$car->getBrand()} {$car->getModel()} (Client: {$this->firstName} {$this->lastName})\n";
+                    } else {
+                        echo "{$part->getType()} for {$car->getBrand()} {$car->getModel()} is not available\n";
+                    }
+                }
+            }
         }
     }
+

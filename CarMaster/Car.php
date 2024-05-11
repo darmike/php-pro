@@ -4,7 +4,6 @@
     
     namespace CarMaster;
     
-    
     use CarMaster\Exceptions\CarIdException;
     
     class Car
@@ -13,13 +12,15 @@
         private string $model;
         private int $year;
         private string $id;
+        private array $parts = [];
         
-        public function __construct(string $brand, string $model, int $year, string $id)
+        public function __construct(string $brand, string $model, int $year, string $id, array $parts)
         {
             $this->brand = $brand;
             $this->model = $model;
             $this->year = $year;
-            $this->validateId($id); // Валідація id при створенні об'єкта
+            $this->validateId($id);
+            $this->parts = $parts; // Виправлено тут
         }
         
         public function getBrand(): string
@@ -42,29 +43,11 @@
             return $this->id;
         }
         
-        public function setBrand(string $brand): void
+        public function getParts(): array
         {
-            $this->brand = $brand;
+            return $this->parts;
         }
         
-        public function setModel(string $model): void
-        {
-            $this->model = $model;
-        }
-        
-        public function setYear(int $year): void
-        {
-            $this->year = $year;
-        }
-        
-        public function setId(string $id): void
-        {
-            $this->validateId($id); // Валідація id при зміні значення
-        }
-        
-        /**
-         * @throws CarIdException
-         */
         private function validateId(string $id): void
         {
             if (strlen($id) !== 8) {
@@ -74,3 +57,4 @@
             $this->id = $id;
         }
     }
+
