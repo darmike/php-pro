@@ -10,13 +10,8 @@
         private string $clientId;
         private array $cars = [];
         
-        public function __construct(
-            string $firstName,
-            string $lastName,
-            string $phoneNumber,
-            string $clientId,
-            Car $car
-        ) {
+        public function __construct(string $firstName, string $lastName, string $phoneNumber, string $clientId, Car $car)
+        {
             $this->firstName = $firstName;
             $this->lastName = $lastName;
             $this->phoneNumber = $phoneNumber;
@@ -60,14 +55,12 @@
             }
             return null;
         }
-        
-        //метод перебирає всі автомобілі, які належать клієнту, та для кожного автомобіля перевіряє наявність запчастин. (business logic)
         public function orderParts(array $parts): void
         {
             foreach ($this->cars as $car) {
                 foreach ($car->getParts() as $part) {
                     if ($part->isAvailable()) {
-                        echo "Ordering {$part->getType()} for {$car->getBrand()} {$car->getModel()} (Client: {$this->firstName} $this->lastName)\n";
+                        echo "Ordering {$part->getType()} for {$car->getBrand()} {$car->getModel()} (Client: {$this->firstName} {$this->lastName})\n";
                     } else {
                         echo "{$part->getType()} for {$car->getBrand()} {$car->getModel()} is not available\n";
                     }

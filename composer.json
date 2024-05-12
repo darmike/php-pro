@@ -1,18 +1,12 @@
 {
   "name": "38063/php-pro",
   "description": "car-master",
-
   "require": {
     "monolog/monolog": "^3.6",
-
+    "symfony/console": "^7.0",
     "doctrine/orm": "^3.1",
-    "doctrine/dbal": "^4.0",
+    "doctrine/dbal": "^4.0"
 
-    "ext-pdo": "*"
-  },
-  "require-dev": {
-    "fakerphp/faker": "^1.23",
-    "symfony/cache": "^7.0"
   },
   "autoload": {
     "psr-4": {
