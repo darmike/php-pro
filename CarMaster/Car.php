@@ -5,6 +5,7 @@
     namespace CarMaster;
     
     use CarMaster\Exceptions\CarIdException;
+    use Doctrine\ORM\Mapping as ORM;
     
     class Car
     {
@@ -12,6 +13,7 @@
         private string $model;
         private int $year;
         private string $id;
+        #[ORM\Column(type: 'json')]
         private array $parts = [];
         
         public function __construct(string $brand, string $model, int $year, string $id, array $parts)
