@@ -5,10 +5,12 @@
     namespace CarMaster\PDO\Repository;
     
     use CarMaster\Car;
+    use Doctrine\ORM\Mapping as ORM;
     use PDO;
     
     readonly class CarRepository
     {
+        #[ORM\Column(type: 'string')]
         private PDO $pdo;
         
         public function __construct(PDO $pdo)

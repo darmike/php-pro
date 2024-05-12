@@ -2,21 +2,18 @@
     
     declare(strict_types=1);
     
-    require dirname(__DIR__).'/php-pro/vendor/autoload.php';
+    require dirname(__DIR__) . '/php-pro/vendor/autoload.php';
     
     use CarMaster\Car;
     use CarMaster\CarParts;
-    use CarMaster\Client;
     use CarMaster\Exceptions\CarIdException;
-    use CarMaster\FinalOrder;
-    use CarMaster\Service;
     use CarMaster\PDO\Repository\CarRepository;
     use Faker\Factory as FakerFactory;
     
     try {
-        // Підключення до бази даних
-        $pdo = new PDO('mysql:host=localhost;dbname=schema_name_4', 'root', 'Football007*');
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        // Створення сервісу
+        $serviceFactory = new \CarMaster\ServiceFactory();
+        $pdo = $serviceFactory->createPDO();
         
         // Створення репозиторію
         $carRepository = new CarRepository($pdo);
@@ -51,9 +48,9 @@
             echo "Модель: {$car->getModel()}\n";
             echo "Рік випуску: {$car->getYear()}\n";
             echo "ID: {$car->getId()}\n";
-            echo "Частини:\n";
+            echo "Запчастини:\n";
             foreach ($car->getParts() as $part) {
-                echo "{$part->getType()} (".($part->isAvailable() ? 'Working' : 'Not Working').")\n";
+                echo "{$part->getType()} (" . ($part->isAvailable() ? 'є в наявності' : 'потрібно замовити зі складу') . ")\n";
             }
             echo "\n";
         }
@@ -61,4 +58,13 @@
         echo "Помилка підключення до бази даних: " . $e->getMessage();
     } catch (CarIdException $e) {
         echo "Помилка: {$e->getMessage()}\n";
+    }
+    
+    
+    $dbPort = getenv('DB_PORT');
+    
+    if ($dbPort !== false) {
+        echo "DB_PORT встановлено: $dbPort\n";
+    } else {
+        echo "DB_PORT не встановлено\n";
     }

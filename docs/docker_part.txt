@@ -13,5 +13,7 @@ docker kill lesson4 - зупинка контейнера по імені
 docker ps -a    --- команда щоб переглянути всі не працюючі контейнери, але які були створені раніше
 docker compose run --rm php -f index.php -запуск файла з контейнер+композер
 
+docker compose up -d   -запускаємо докер+композер
+
 # Installs Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
