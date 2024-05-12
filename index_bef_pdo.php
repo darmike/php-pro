@@ -2,8 +2,7 @@
     
     declare(strict_types=1);
     
-    $temp = dirname(__DIR__).'/php-pro/vendor/autoload.php';
-    var_dump($temp);
+  
     
     require dirname(__DIR__).'/php-pro/vendor/autoload.php';
     
