@@ -76,9 +76,15 @@
                 'year' => $car->getYear(),
             ]);
         }
-        
+    
         //DELETE
         public function delete(Car $car, array $parts = []): void
+        {
+            $statement = $this->pdo->prepare('DELETE FROM cars WHERE id = :id');
+            $statement->execute(['id' => $car->getId()]);
+        }
+        
+        public function lete(Car $car, array $parts = []): void
         {
             $statement = $this->pdo->prepare('DELETE FROM cars WHERE id = :id');
             $statement->execute(['id' => $car->getId()]);
