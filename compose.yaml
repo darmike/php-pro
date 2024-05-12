@@ -11,9 +11,9 @@ services:
       - PHP_IDE_CONFIG
       - XDEBUG_CONFIG
       - DB_HOST=db
-      - DB_NAME=schema_name_4
-      - DB_USER=root
-      - DB_PASSWORD=Football007*
+      - DB_NAME
+      - DB_USER
+      - DB_PASSWORD
 
   db:
     image: mysql:8
