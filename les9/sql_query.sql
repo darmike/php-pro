@@ -14,7 +14,7 @@ WHERE author.first_name = 'Zaria' AND author.last_name = 'Barton'
 
 GROUP BY author.id, author.first_name, author.last_name;
 
-# Новий коміт для переходу в гілку мейн
+
 # Я використав JOIN для з'єднання таблиць 'author' і 'book' за умовою,
 # що author.id дорівнює book.author_id. дозволяє отримати всі книги,
 # які належать автору з іменем "Zaria Barton" без використання додаткового підзапиту.
