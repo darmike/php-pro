@@ -6,10 +6,7 @@
     
     use CarMaster\Car;
     use CarMaster\CarParts;
-    use CarMaster\Client;
     use CarMaster\Exceptions\CarIdException;
-    use CarMaster\FinalOrder;
-    use CarMaster\Service;
     use CarMaster\PDO\Repository\CarRepository;
     use Faker\Factory as FakerFactory;
     

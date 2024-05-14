@@ -10,7 +10,7 @@ services:
     environment:
       - PHP_IDE_CONFIG
       - XDEBUG_CONFIG
-      - DB_HOST=db
+      - DB_HOST=db  # Оновлено на ім'я сервісу бази даних
       - DB_NAME
       - DB_USER
       - DB_PASSWORD
