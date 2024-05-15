@@ -6,8 +6,10 @@
     "symfony/console": "^7.0",
     "doctrine/orm": "^3.1",
     "doctrine/dbal": "^4.0",
-    "ext-pdo": "*"
+    "ext-pdo": "*",
+    "ext-mongodb": "*"
   },
+
   "autoload": {
     "psr-4": {
       "CarMaster\\": "./CarMaster"
@@ -18,5 +20,9 @@
       "name": "darmike",
       "email": "darmogray777@gmail.com"
     }
-  ]
+  ],
+  "require-dev": {
+    "fakerphp/faker": "^1.23",
+    "symfony/cache": "^7.0"
+  }
 }

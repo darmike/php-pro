@@ -14,6 +14,9 @@
         private string $id;
         private array $parts = [];
         
+        /**
+         * @throws CarIdException
+         */
         public function __construct(string $brand, string $model, int $year, string $id, array $parts)
         {
             $this->brand = $brand;

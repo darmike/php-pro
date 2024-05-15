@@ -5,6 +5,7 @@
     namespace CarMaster\PDO\Repository;
     
     use CarMaster\Car;
+    use CarMaster\Exceptions\CarIdException;
     use PDO;
     
     readonly class CarRepository
@@ -32,6 +33,9 @@
             ) : null;
         }
         
+        /**
+         * @throws CarIdException
+         */
         public function findAll(): array
         {
             $statement = $this->pdo->query('SELECT * FROM cars');
@@ -51,7 +55,7 @@
         }
         
         // CREATE
-        public function save(Car $car, array $parts = []): void
+        public function save(Car $car): void
         {
             $statement = $this->pdo->prepare(
                 'INSERT INTO cars (brand, model, year) VALUES (:brand, :model, :year)'
@@ -64,7 +68,7 @@
         }
         
         //UPDATE
-        public function update(Car $car, array $parts = []): void
+        public function update(Car $car): void
         {
             $statement = $this->pdo->prepare(
                 'UPDATE cars SET brand = :brand, model = :model, year = :year WHERE id = :id'
@@ -76,17 +80,13 @@
                 'year' => $car->getYear(),
             ]);
         }
-    
+        
         //DELETE
-        public function delete(Car $car, array $parts = []): void
+        public function delete(Car $car): void
         {
             $statement = $this->pdo->prepare('DELETE FROM cars WHERE id = :id');
             $statement->execute(['id' => $car->getId()]);
         }
         
-        public function lete(Car $car, array $parts = []): void
-        {
-            $statement = $this->pdo->prepare('DELETE FROM cars WHERE id = :id');
-            $statement->execute(['id' => $car->getId()]);
-        }
+       
     }

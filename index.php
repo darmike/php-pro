@@ -6,10 +6,7 @@
     
     use CarMaster\Car;
     use CarMaster\CarParts;
-    use CarMaster\Client;
     use CarMaster\Exceptions\CarIdException;
-    use CarMaster\FinalOrder;
-    use CarMaster\Service;
     use CarMaster\PDO\Repository\CarRepository;
     use Faker\Factory as FakerFactory;
     
@@ -51,9 +48,9 @@
             echo "Модель: {$car->getModel()}\n";
             echo "Рік випуску: {$car->getYear()}\n";
             echo "ID: {$car->getId()}\n";
-            echo "Частини:\n";
+            echo "Запчастини:\n";
             foreach ($car->getParts() as $part) {
-                echo "{$part->getType()} (".($part->isAvailable() ? 'Working' : 'Not Working').")\n";
+                echo "{$part->getType()} (".($part->isAvailable() ? 'Є в наявності' : 'Потрібно замовити').")\n";
             }
             echo "\n";
         }
