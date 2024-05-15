@@ -48,9 +48,9 @@
             echo "Модель: {$car->getModel()}\n";
             echo "Рік випуску: {$car->getYear()}\n";
             echo "ID: {$car->getId()}\n";
-            echo "Частини:\n";
+            echo "Запчастини:\n";
             foreach ($car->getParts() as $part) {
-                echo "{$part->getType()} (".($part->isAvailable() ? 'Working' : 'Not Working').")\n";
+                echo "{$part->getType()} (".($part->isAvailable() ? 'Є в наявності' : 'Потрібно замовити').")\n";
             }
             echo "\n";
         }
