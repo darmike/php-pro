@@ -1,8 +1,7 @@
 <?php
     
     declare(strict_types=1);
-    
-    
+
     require dirname(__DIR__).'/php-pro/vendor/autoload.php';
     
     use CarMaster\Car;
@@ -12,7 +11,7 @@
     use Faker\Factory as FakerFactory;
     try {
         // Підключення до бази даних
-        
+
         $pdo = new PDO(
             'mysql:host='.getenv('DB_HOST'). ';dbname='.getenv('DB_NAME'),
             getenv('DB_USER'),
