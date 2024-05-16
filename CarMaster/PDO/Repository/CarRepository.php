@@ -18,6 +18,10 @@
         }
         
         //READ
+        
+        /**
+         * @throws CarIdException
+         */
         public function findById(int $id): ?Car
         {
             $statement = $this->pdo->prepare('SELECT * FROM cars WHERE id = :id');

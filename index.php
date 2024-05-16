@@ -2,6 +2,7 @@
     
     declare(strict_types=1);
     
+    
     require dirname(__DIR__).'/php-pro/vendor/autoload.php';
     
     use CarMaster\Car;
@@ -9,10 +10,14 @@
     use CarMaster\Exceptions\CarIdException;
     use CarMaster\PDO\Repository\CarRepository;
     use Faker\Factory as FakerFactory;
-    
     try {
         // Підключення до бази даних
-        $pdo = new PDO('mysql:host=localhost;dbname=schema_name_4', 'root', 'Football007*');
+        
+        $pdo = new PDO(
+            'mysql:host='.getenv('DB_HOST'). ';dbname='.getenv('DB_NAME'),
+            getenv('DB_USER'),
+            getenv('DB_PASSWORD')
+        );
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         // Створення репозиторію
