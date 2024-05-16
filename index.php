@@ -9,9 +9,9 @@
     use CarMaster\Exceptions\CarIdException;
     use CarMaster\PDO\Repository\CarRepository;
     use Faker\Factory as FakerFactory;
-    
     try {
         // Підключення до бази даних
+
         $pdo = new PDO(
             'mysql:host='.getenv('DB_HOST'). ';dbname='.getenv('DB_NAME'),
             getenv('DB_USER'),
